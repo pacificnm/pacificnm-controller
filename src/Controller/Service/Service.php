@@ -47,9 +47,9 @@ class Service implements ServiceInterface
      *
      * @see \Controller\Service\ServiceInterface::getByName()
      */
-    public function getByName($controllerName)
+    public function getByName($moduleId, $controllerName)
     {
-        return $this->mapper->getByName($controllerName);
+        return $this->mapper->getByName($moduleId, $controllerName);
     }
 
     /**

@@ -78,7 +78,7 @@ class MysqlMapper extends AbstractMysqlMapper implements MysqlMapperInterface
      * {@inheritDoc}
      * @see \Controller\Mapper\MysqlMapperInterface::getByName()
      */
-    public function getByName($controllerName)
+    public function getByName($moduleId, $controllerName)
     {
         $this->select = $this->readSql->select('controller');
         
@@ -86,6 +86,10 @@ class MysqlMapper extends AbstractMysqlMapper implements MysqlMapperInterface
         
         $this->select->where(array(
             'controller.controller_name = ?' => $controllerName
+        ));
+        
+        $this->select->where(array(
+            'controller.module_id = ?' => $moduleId
         ));
         
         return $this->getRow();
