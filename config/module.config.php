@@ -1,9 +1,9 @@
 <?php 
 return array(
     'module' => array(
-        'Module' => array(
+        'Controller' => array(
             'name' => 'Controller',
-            'version' => '1.0.0',
+            'version' => '1.0.3',
             'install' => array(
                 'require' => array(),
                 'sql' => 'sql/controller.sql'
@@ -35,6 +35,8 @@ return array(
                 'pageSubTitle' => 'New',
                 'activeMenuItem' => 'admin-index',
                 'activeSubMenuItem' => 'controller-index',
+                'icon' => 'fa fa-cogs',
+                'layout' => 'admin',
                 'type' => 'literal',
                 'options' => array(
                     'route' => '/admin/controller/create',
@@ -49,6 +51,8 @@ return array(
                 'pageSubTitle' => 'Delete',
                 'activeMenuItem' => 'admin-index',
                 'activeSubMenuItem' => 'controller-index',
+                'icon' => 'fa fa-cogs',
+                'layout' => 'admin',
                 'type' => 'segment',
                 'options' => array(
                     'route' => '/admin/controller/delete/[:id]',
@@ -63,6 +67,8 @@ return array(
                 'pageSubTitle' => 'Home',
                 'activeMenuItem' => 'admin-index',
                 'activeSubMenuItem' => 'controller-index',
+                'icon' => 'fa fa-cogs',
+                'layout' => 'admin',
                 'type' => 'literal',
                 'options' => array(
                     'route' => '/admin/controller',
@@ -77,6 +83,8 @@ return array(
                 'pageSubTitle' => 'Rest',
                 'activeMenuItem' => 'admin-index',
                 'activeSubMenuItem' => 'controller-index',
+                'icon' => 'fa fa-cogs',
+                'layout' => 'rest',
                 'type' => 'literal',
                 'options' => array(
                     'route' => '/api/controller[/:id]',
@@ -91,6 +99,8 @@ return array(
                 'pageSubTitle' => 'Edit',
                 'activeMenuItem' => 'admin-index',
                 'activeSubMenuItem' => 'controller-index',
+                'icon' => 'fa fa-cogs',
+                'layout' => 'admin',
                 'type' => 'segment',
                 'options' => array(
                     'route' => '/admin/controller/update/[:id]',
@@ -105,6 +115,8 @@ return array(
                 'pageSubTitle' => 'View',
                 'activeMenuItem' => 'admin-index',
                 'activeSubMenuItem' => 'controller-index',
+                'icon' => 'fa fa-cogs',
+                'layout' => 'admin',
                 'type' => 'segment',
                 'options' => array(
                     'route' => '/admin/controller/view/[:id]',
@@ -136,6 +148,11 @@ return array(
             __DIR__ . '/../view'
         )
     ),
+    'view_helpers' => array(
+        'factories' => array(
+            'ControllerSearchForm' => 'Controller\View\Helper\Factory\ControllerSearchFormFactory'
+        )
+    ),
     'acl' => array(
         'default' => array(
             'guest' => array(),
@@ -156,12 +173,13 @@ return array(
                 'route' => 'admin-index',
                 'icon' => 'fa fa-gear',
                 'order' => 99,
+                'location' => 'left',
                 'active' => true,
                 'items' => array(
                     array(
                         'name' => 'Controller',
                         'route' => 'controller-index',
-                        'icon' => 'fa fa-gear',
+                        'icon' => 'fa fa-cogs',
                         'order' => 5,
                         'active' => true
                     )

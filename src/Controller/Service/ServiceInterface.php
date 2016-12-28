@@ -21,11 +21,12 @@ interface ServiceInterface
     public function get($id);
 
     /**
-     *
-     * @param string $controllerName            
+     * 
+     * @param number $moduleId
+     * @param string $controllerName
      * @return Entity
      */
-    public function getByName($controllerName);
+    public function getByName($moduleId, $controllerName);
 
     /**
      *

@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `controller` (
 `controller_id` int(20) unsigned NOT NULL,
   `module_id` int(20) unsigned NOT NULL,
   `controller_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 --
 -- Indexes for dumped tables
@@ -46,4 +46,6 @@ ALTER TABLE `controller`
 -- AUTO_INCREMENT for table `controller`
 --
 ALTER TABLE `controller`
-MODIFY `controller_id` int(20) unsigned NOT NULL AUTO_INCREMENT;SET FOREIGN_KEY_CHECKS=1;
+MODIFY `controller_id` int(20) unsigned NOT NULL AUTO_INCREMENT;
+
+SET FOREIGN_KEY_CHECKS=1;
