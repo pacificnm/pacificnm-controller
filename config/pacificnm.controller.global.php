@@ -10,7 +10,7 @@ return array(
     'module' => array(
         'Controller' => array(
             'name' => 'Controller',
-            'version' => '1.0.5',
+            'version' => '1.0.6',
             'install' => array(
                 'require' => array(),
                 'sql' => 'sql/controller.sql'
