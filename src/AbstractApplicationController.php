@@ -75,6 +75,7 @@ class AbstractApplicationController extends AbstractActionController
         $maxlifetime = ini_get("session.gc_maxlifetime") - 120;
         
         $this->layout()->setVariable('maxlifetime', $maxlifetime);
+
         
         // return parent dispatch
         return parent::onDispatch($e);
@@ -115,10 +116,12 @@ class AbstractApplicationController extends AbstractActionController
         // trigger event
         $this->getEventManager()->trigger('pageLoaded', $this, array(
             'authId' => $authId,
-            'requestUrl' => $this->getRequest()
-                ->getUri(),
+            'requestUrl' => $this->getRequest()->getUri(),
             'requestParams' => $requestParams
         ));
+        
+        // set categoryId
+        $this->layout()->setVariable('categoryId', $this->params()->fromRoute('categoryId', 0));
     }
 }
 
